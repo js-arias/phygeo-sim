@@ -114,6 +114,65 @@ and the landscape model
 used for the respective experiment.
 The projects are called `project.tab`.
 
+## Simulation setup
+
+All simulations are run using the same setup.
+The simulations use the program `pgs`,
+which is available as part of [PhyGeo](https://github.com/js-arias/phygeo).
+The simulations are divided into five time periods
+that correspond to geological periods:
+the Neogene (23-0 Ma),
+the Paleogene (66-23 Ma),
+the Cretaceous (145-66 Ma),
+the Jurassic (201-145 Ma),
+and the Triassic (251-201 Ma).
+At each time period,
+the diffusion is divided into three groups:
+slow ($\lambda$ between 100 and 1000),
+average (10-100),
+and slow (1-10).
+For each combination of time period
+and diffusion group,
+50 trees were simulated.
+
+For each simulated tree,
+a random starting root is selected
+for the specified time period,
+and then a particle evolves in the tree
+using a $\lambda$ value selected at random
+from the diffusion group.
+To produce the ancestral particles,
+100 pixels are selected at random
+using the spherical normal,
+with a mean equal to the simulated particle
+and a $\lambda$ of 100
+(this value is used because it produces geographic points
+that are similar to the observed ones).
+The pixel locations are conditioned
+by the pixel prior at the time period of the particle.
+The simulation produces tree output files:
+files with suffix `-lambda.tab`
+store the simulated $\lambda$ values;
+files with suffix `-particles.tab`
+store the inferred particles;
+and files with suffix `-trees.tab`
+store the simulated trees.
+
+The particle files are not stored
+in this repository
+as they are too large;
+nevertheless,
+the files used in the inference to test the results
+are a process of these files,
+which are prefixed as `want-`,
+and contain the pixel frequencies
+of the simulated pixels at each node.
+In the particular case of the inference with the current landscape,
+this frequency file was rotated to the present coordinates
+and stored with the prefix `unrot-`.
+To reduce their size,
+the files are zipped in this repository.
+
 ## Experiments
 
 ### Homogeneous sphere
