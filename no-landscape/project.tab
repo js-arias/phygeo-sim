@@ -1,0 +1,5 @@
+# phygeo project files
+dataset	path
+geomotion	nomotion-motion-120.tab
+landscape	nomotion-landscape-120.tab
+pixprior	model-pix-prior.tab
