@@ -173,6 +173,26 @@ and stored with the prefix `unrot-`.
 To reduce their size,
 the files are zipped in this repository.
 
+The inference phase produces a file suffixed
+`-infer-lambda.tab`
+for the inferred $\lambda$ values
+and a file suffixed `-infer-particles.tab`
+for the inferred particles.
+To process the particle files,
+the particles are transformed into a continuous distribution
+using a spherical normal KDE with a $\lambda$ of 1000
+that produces files stored with the prefix `got-`.
+These files,
+the particle files and the KDE files
+are too large for the repository.
+Nevertheless,
+the resulting files prefixed `pix-`,
+which is a table with the total number
+of correctly inferred pixels per node,
+as well as a graph with the proportion of retrieved nodes
+(prefixed `nodes-`),
+are stored in this repository.
+
 ## Experiments
 
 ### Homogeneous sphere
