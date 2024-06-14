@@ -1,0 +1,6 @@
+# phygeo project files
+# data save on: 2024-03-04T14:26:44-03:00
+dataset	path
+geomotion	muller-motion-120-5.tab
+landscape	muller-landscape-cao-paleomap-120-5.tab
+pixprior	model-pix-prior.tab
